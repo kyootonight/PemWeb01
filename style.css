@@ -1,0 +1,227 @@
+/* =========================================================
+   STYLE.CSS - versi basic
+   Dipakai bareng oleh login.html, dashboard.html, profile.html
+   ========================================================= */
+
+/* Reset dasar, biar margin/padding bawaan browser hilang */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f2f2f2;
+  color: #333333;
+}
+
+h1, h2, h3 {
+  color: #222222;
+  margin-bottom: 10px;
+}
+
+a {
+  color: #2d6cdf;
+  text-decoration: none;
+}
+
+/* ---------------------------------------------------
+   TOMBOL
+   --------------------------------------------------- */
+.btn {
+  display: inline-block;
+  background-color: #2d6cdf;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #1d54b8;
+}
+
+/* ---------------------------------------------------
+   FORM (dipakai di login & profile)
+   --------------------------------------------------- */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* =====================================================
+   HALAMAN LOGIN
+   Cuma satu kotak putih di tengah halaman, dibikin pakai
+   margin: auto (biar rata tengah horizontal) + margin-top.
+   ===================================================== */
+
+.login-box {
+  width: 350px;
+  margin: 80px auto;
+  background-color: #ffffff;
+  padding: 30px;
+  border: 1px solid #dddddd;
+  border-radius: 6px;
+}
+
+.login-box p.subtitle {
+  color: #777777;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.login-box .extra-text {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+/* =====================================================
+   NAVBAR (dipakai di dashboard & profile)
+   Link-nya "dijejerin" pakai float: left.
+   ===================================================== */
+
+.navbar {
+  background-color: #333333;
+  overflow: hidden; /* biar float di dalamnya gak bikin navbar kolaps */
+}
+
+.navbar a {
+  float: left;
+  color: #ffffff;
+  padding: 14px 18px;
+  font-size: 15px;
+}
+
+.navbar a:hover {
+  background-color: #444444;
+}
+
+.navbar a.active {
+  background-color: #2d6cdf;
+}
+
+/* Kelas bantu buat "membersihkan" float, dipasang di elemen
+   sesudah area yang isinya float, biar tinggi kotak gak collapse */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* =====================================================
+   HALAMAN DASHBOARD
+   ===================================================== */
+
+.page-content {
+  padding: 30px;
+}
+
+.page-content p.subtitle {
+  color: #777777;
+  margin-bottom: 20px;
+}
+
+/* 3 kotak statistik dijejer pakai float + width persen,
+   bukan grid, biar lebih dasar */
+.stat-box {
+  float: left;
+  width: 31.33%;
+  margin-right: 3%;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.stat-box:last-child {
+  margin-right: 0;
+}
+
+.stat-box .stat-label {
+  color: #777777;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.stat-box .stat-value {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 6px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.activity-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #eeeeee;
+  font-size: 14px;
+}
+
+.activity-item:last-child {
+  border-bottom: none;
+}
+
+.activity-item .activity-time {
+  color: #999999;
+  float: right;
+}
+
+/* =====================================================
+   HALAMAN PROFILE CREATOR
+   Form di atas, preview di bawah (gak disamping-samping
+   biar gak perlu grid/flex).
+   ===================================================== */
+
+.preview-box {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 6px;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.preview-box .avatar-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #2d6cdf;
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 70px;
+  margin: 0 auto 10px auto;
+}
+
+.tag {
+  display: inline-block;
+  background-color: #eeeeee;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
