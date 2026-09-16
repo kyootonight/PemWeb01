@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buat Profil - Creator Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="navbar clearfix">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="profile.html" class="active">Profil Saya</a>
+    <a href="login.html">Keluar</a>
+  </div>
+
+  <div class="page-content">
+    <h2>Buat Profil Creator</h2>
+    <p class="subtitle">Lengkapi data di bawah supaya profil kamu tampil</p>
+
+    <div class="card">
+      <form>
+        <div class="form-group">
+          <label for="nama">Nama Lengkap</label>
+          <input type="text" id="nama" name="nama" placeholder="Nama kamu" />
+        </div>
+
+        <div class="form-group">
+          <label for="peran">Peran / Bidang</label>
+          <input type="text" id="peran" name="peran" placeholder="Contoh: Video Editor" />
+        </div>
+
+        <div class="form-group">
+          <label for="bio">Bio Singkat</label>
+          <textarea id="bio" name="bio" rows="4" placeholder="Ceritakan sedikit tentang diri kamu"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="skill">Keahlian (pisahkan pakai koma)</label>
+          <input type="text" id="skill" name="skill" placeholder="Contoh: Editing, Fotografi" />
+        </div>
+
+        <span class="tag">Editing</span>
+        <span class="tag">Fotografi</span>
+        <span class="tag">Copywriting</span>
+
+        <br /><br />
+        <button type="submit" class="btn">Simpan Profil</button>
+      </form>
+    </div>
+
+    <!-- Preview taruh di bawah form, bukan disamping -->
+    <div class="preview-box">
+      <div class="avatar-circle">K</div>
+      <h3>Kyotoo</h3>
+      <p>Video Editor</p>
+    </div>
+  </div>
+
+</body>
+</html>
