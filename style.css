@@ -1,227 +1,340 @@
-/* =========================================================
-   STYLE.CSS - versi basic
-   Dipakai bareng oleh login.html, dashboard.html, profile.html
-   ========================================================= */
-
-/* Reset dasar, biar margin/padding bawaan browser hilang */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  --intel: #2b91dd;
+  --amd: #e2403f;
+  --gelap: #0b0d17;   /* latar paling gelap */
+  --seksi: #12162a;   /* latar seksi selang-seling */
+  --kartu: #1b2136;   /* latar kartu */
+  --garis: #2a3149;
+  --terang: #e7eaf3;
+  --redup: #98a1b8;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f2f2f2;
-  color: #333333;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--gelap);
+  color: var(--terang);
 }
 
-h1, h2, h3 {
-  color: #222222;
-  margin-bottom: 10px;
+h1, h2, h3, h4, h5, .logo-text {
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+p {
+  color: var(--redup);
 }
 
 a {
-  color: #2d6cdf;
   text-decoration: none;
 }
 
-/* ---------------------------------------------------
-   TOMBOL
-   --------------------------------------------------- */
-.btn {
-  display: inline-block;
-  background-color: #2d6cdf;
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  font-size: 15px;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background-color: #1d54b8;
-}
-
-/* ---------------------------------------------------
-   FORM (dipakai di login & profile)
-   --------------------------------------------------- */
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #cccccc;
-  border-radius: 4px;
-  font-size: 14px;
-}
-
-/* =====================================================
-   HALAMAN LOGIN
-   Cuma satu kotak putih di tengah halaman, dibikin pakai
-   margin: auto (biar rata tengah horizontal) + margin-top.
-   ===================================================== */
-
-.login-box {
-  width: 350px;
-  margin: 80px auto;
-  background-color: #ffffff;
-  padding: 30px;
-  border: 1px solid #dddddd;
-  border-radius: 6px;
-}
-
-.login-box p.subtitle {
-  color: #777777;
-  margin-bottom: 20px;
-  font-size: 14px;
-}
-
-.login-box .extra-text {
-  text-align: center;
-  margin-top: 15px;
-  font-size: 14px;
-}
-
-/* =====================================================
-   NAVBAR (dipakai di dashboard & profile)
-   Link-nya "dijejerin" pakai float: left.
-   ===================================================== */
-
+/* ---------- Navbar ---------- */
 .navbar {
-  background-color: #333333;
-  overflow: hidden; /* biar float di dalamnya gak bikin navbar kolaps */
+  background-color: rgba(11, 13, 23, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--garis);
 }
 
-.navbar a {
-  float: left;
-  color: #ffffff;
-  padding: 14px 18px;
+.logo-text {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Titik dua warna di sebelah logo, mewakili dua merek */
+.logo-dot {
+  font-size: 26px;
+  margin-left: 2px;
+  color: var(--intel);
+}
+
+.logo-dot:last-child {
+  color: var(--amd);
+  margin-left: 0;
+}
+
+.navbar-nav .nav-link {
+  color: var(--redup);
+  font-size: 15px;
+  font-weight: 500;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: color .3s;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #fff;
+  border-bottom-color: var(--intel);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  min-height: 78vh;
+  padding: 120px 0 70px; /* ruang atas karena navbar fixed-top */
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  /* Gradien diagonal: biru Intel bertemu merah AMD di tengah */
+  background:
+    linear-gradient(105deg,
+      rgba(43, 145, 221, 0.28) 0%,
+      rgba(43, 145, 221, 0.08) 45%,
+      rgba(226, 64, 63, 0.08) 55%,
+      rgba(226, 64, 63, 0.28) 100%),
+    var(--gelap);
+}
+
+/* Pola garis tipis menyerupai jalur PCB */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(255,255,255,.04) 0 1px, transparent 1px 64px),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.04) 0 1px, transparent 1px 64px);
+  pointer-events: none;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-judul {
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.hero-teks {
+  max-width: 56ch;
+  color: #c6cde0;
+}
+
+.hero-kecil {
+  min-height: 34vh;
+  padding: 130px 0 60px;
+}
+
+/* ---------- Judul seksi ---------- */
+.judul-seksi {
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 22px;
+}
+
+/* Garis bawah dua warna, melanjutkan tema Intel vs AMD */
+.judul-seksi::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 110px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--intel), var(--amd));
+}
+
+.judul-seksi.text-start::after {
+  margin: 0;
+}
+
+.teks-intel { color: var(--intel); }
+.teks-amd   { color: var(--amd); }
+
+/* ---------- Latar seksi selang-seling ---------- */
+.bg-seksi { background-color: var(--seksi); }
+
+/* ---------- Kartu ---------- */
+.kartu {
+  background-color: var(--kartu);
+  border: 1px solid var(--garis);
+  border-radius: 10px;
+  height: 100%;
+  padding: 30px 28px;
+  transition: transform .3s, border-color .3s;
+}
+
+.kartu:hover {
+  transform: translateY(-4px);
+  border-color: #3b4566;
+}
+
+.kartu-intel { border-top: 3px solid var(--intel); }
+.kartu-amd   { border-top: 3px solid var(--amd); }
+
+.ikon-kotak {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 18px;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.ikon-intel { color: var(--intel); }
+.ikon-amd   { color: var(--amd); }
+
+/* ---------- Tabel perbandingan ---------- */
+.tabel-banding {
+  background-color: var(--kartu);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tabel-banding table,
+.tabel-banding th,
+.tabel-banding td {
+  background-color: transparent;
+}
+
+.tabel-banding th,
+.tabel-banding td {
+  border-color: var(--garis);
+  padding: 16px 18px;
+  vertical-align: top;
+  font-size: 15px;
+  color: var(--redup);
+}
+
+.tabel-banding thead th {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  border-bottom: 2px solid var(--garis);
+}
+
+.tabel-banding thead .kol-intel { background-color: rgba(43, 145, 221, .18); }
+.tabel-banding thead .kol-amd   { background-color: rgba(226, 64, 63, .18); }
+
+.tabel-banding tbody th {
+  color: var(--terang);
+  font-weight: 600;
+  width: 20%;
+}
+
+/* Label kecil penanda siapa yang unggul di satu baris */
+.badge-unggul {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.badge-intel { background-color: rgba(43, 145, 221, .2); color: var(--intel); }
+.badge-amd   { background-color: rgba(226, 64, 63, .2);  color: var(--amd); }
+.badge-seri  { background-color: rgba(255, 255, 255, .1); color: var(--redup); }
+
+/* ---------- Accordion FAQ ---------- */
+.accordion-item {
+  background-color: var(--kartu);
+  border: 1px solid var(--garis);
+  margin-bottom: 12px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.accordion-button {
+  background-color: var(--kartu);
+  color: var(--terang);
+  font-weight: 500;
+  font-size: 16px;
+  box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: rgba(43, 145, 221, .12);
+  color: #fff;
+}
+
+.accordion-button::after {
+  filter: invert(1) grayscale(1) brightness(1.6);
+}
+
+.accordion-body {
+  color: var(--redup);
   font-size: 15px;
 }
 
-.navbar a:hover {
-  background-color: #444444;
-}
-
-.navbar a.active {
-  background-color: #2d6cdf;
-}
-
-/* Kelas bantu buat "membersihkan" float, dipasang di elemen
-   sesudah area yang isinya float, biar tinggi kotak gak collapse */
-.clearfix::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* =====================================================
-   HALAMAN DASHBOARD
-   ===================================================== */
-
-.page-content {
-  padding: 30px;
-}
-
-.page-content p.subtitle {
-  color: #777777;
-  margin-bottom: 20px;
-}
-
-/* 3 kotak statistik dijejer pakai float + width persen,
-   bukan grid, biar lebih dasar */
-.stat-box {
-  float: left;
-  width: 31.33%;
-  margin-right: 3%;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
+/* ---------- Tombol ---------- */
+.btn-utama {
+  background: linear-gradient(90deg, var(--intel), #1f6fae);
+  color: #fff;
+  font-weight: 500;
+  padding: 11px 26px;
+  border: none;
   border-radius: 6px;
-  padding: 20px;
 }
 
-.stat-box:last-child {
-  margin-right: 0;
-}
+.btn-utama:hover { color: #fff; opacity: .9; }
 
-.stat-box .stat-label {
-  color: #777777;
-  font-size: 13px;
-  margin-bottom: 8px;
-}
-
-.stat-box .stat-value {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.card {
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
+.btn-garis {
+  border: 1px solid var(--garis);
+  color: var(--terang);
+  font-weight: 500;
+  padding: 11px 26px;
   border-radius: 6px;
-  padding: 20px;
-  margin-top: 20px;
 }
 
-.activity-item {
-  padding: 10px 0;
-  border-bottom: 1px solid #eeeeee;
-  font-size: 14px;
+.btn-garis:hover {
+  color: #fff;
+  border-color: var(--amd);
 }
 
-.activity-item:last-child {
-  border-bottom: none;
+/* ---------- Footer ---------- */
+footer {
+  background-color: #080a12;
+  border-top: 1px solid var(--garis);
 }
 
-.activity-item .activity-time {
-  color: #999999;
-  float: right;
-}
+footer a { color: var(--redup); }
+footer a:hover { color: #fff; }
 
-/* =====================================================
-   HALAMAN PROFILE CREATOR
-   Form di atas, preview di bawah (gak disamping-samping
-   biar gak perlu grid/flex).
-   ===================================================== */
-
-.preview-box {
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
-  border-radius: 6px;
-  padding: 20px;
-  margin-top: 20px;
-  text-align: center;
-}
-
-.preview-box .avatar-circle {
-  width: 70px;
-  height: 70px;
+/* ---------- Tombol kembali ke atas ---------- */
+.back-top {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background-color: #2d6cdf;
-  color: #ffffff;
-  font-size: 24px;
-  line-height: 70px;
-  margin: 0 auto 10px auto;
+  background-color: var(--intel);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s;
+  z-index: 99;
 }
 
-.tag {
-  display: inline-block;
-  background-color: #eeeeee;
-  padding: 5px 10px;
-  border-radius: 4px;
-  font-size: 13px;
-  margin-right: 5px;
-  margin-bottom: 10px;
+.back-top.tampil {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ---------- Aksesibilitas & layar kecil ---------- */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+
+@media (max-width: 767px) {
+  .hero { min-height: 68vh; }
+  .kartu { padding: 24px 22px; }
 }
