@@ -1,57 +1,226 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard - Creator Hub</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perbandingan Intel vs AMD — Adu Prosesor</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- Navbar, link-nya dijejer pakai float: left di style.css -->
-  <div class="navbar clearfix">
-    <a href="dashboard.html" class="active">Dashboard</a>
-    <a href="profile.html">Profil Saya</a>
-    <a href="login.html">Keluar</a>
-  </div>
+    <!-- ============ NAVBAR ============ -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="logo-text">Adu Prosesor<sup class="logo-dot">.</sup><sup class="logo-dot">.</sup></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuUtama"
+                aria-controls="menuUtama" aria-expanded="false" aria-label="Buka menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuUtama">
+                <ul class="navbar-nav ms-auto gap-lg-4 text-center">
+                    <li class="nav-item"><a class="nav-link" href="login.html">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="dashboard.html">Perbandingan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="profile.html">Rekomendasi</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-  <div class="page-content">
-    <h2>Halo, Kyotoo</h2>
-    <p class="subtitle">Ini ringkasan aktivitas kamu hari ini</p>
+    <!-- ============ HERO PENDEK ============ -->
+    <header class="hero hero-kecil">
+        <div class="container">
+            <h1 class="hero-judul mb-3" style="font-size:clamp(2rem,4.5vw,3rem);">Perbandingan per aspek</h1>
+            <p class="hero-teks mb-0">
+                Delapan hal yang biasanya jadi pertimbangan sebelum membeli, plus catatan
+                siapa yang biasanya unggul di tiap poin.
+            </p>
+        </div>
+    </header>
 
-    <!-- 3 kotak statistik, dijejer pakai float di style.css -->
-    <div class="clearfix">
-      <div class="stat-box">
-        <div class="stat-label">Total Konten</div>
-        <div class="stat-value">24</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-label">Pengikut</div>
-        <div class="stat-value">1204</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-label">Views Bulan Ini</div>
-        <div class="stat-value">8500</div>
-      </div>
-    </div>
+    <!-- ============ TABEL ============ -->
+    <section class="py-5 bg-seksi">
+        <div class="container py-4">
+            <h2 class="judul-seksi text-center mb-5">Tabel <span class="teks-intel">lengkap</span></h2>
 
-    <div class="card">
-      <h3>Aktivitas Terbaru</h3>
+            <!-- table-responsive bikin tabel bisa digeser di layar kecil -->
+            <div class="table-responsive tabel-banding">
+                <table class="table table-borderless mb-0">
+                    <thead>
+                        <tr>
+                            <th scope="col">Aspek</th>
+                            <th scope="col" class="kol-intel"><i class="fa-solid fa-microchip me-2"></i>Intel</th>
+                            <th scope="col" class="kol-amd"><i class="fa-solid fa-microchip me-2"></i>AMD</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Susunan inti</th>
+                            <td>Campuran inti besar (P-core) dan inti kecil (E-core) dalam satu chip.</td>
+                            <td>Semua inti seragam, disusun dalam kelompok bernama CCD.
+                                <span class="badge-unggul badge-seri">Beda pendekatan, bukan soal menang</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Performa game</th>
+                            <td>Stabil dan kompetitif, terutama untuk game yang mengandalkan satu inti cepat.</td>
+                            <td>Model berakhiran X3D punya cache ekstra yang sangat terasa di game berat CPU.
+                                <span class="badge-unggul badge-amd">AMD unggul</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Kerja berat</th>
+                            <td>Jumlah inti total banyak berkat E-core, bagus untuk render dan kompilasi.</td>
+                            <td>Inti banyak dengan performa per inti tinggi, kuat di beban produktivitas.
+                                <span class="badge-unggul badge-seri">Imbang</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Konsumsi daya</th>
+                            <td>Generasi lama cukup haus daya; Core Ultra sudah jauh lebih hemat.</td>
+                            <td>Umumnya lebih hemat daya pada beban yang sama.
+                                <span class="badge-unggul badge-amd">AMD unggul</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Grafis bawaan</th>
+                            <td>Memakai Intel Arc, cukup untuk kerja harian dan game ringan.</td>
+                            <td>Memakai Radeon; seri APU seperti Ryzen 8000G termasuk yang terkuat di kelasnya.
+                                <span class="badge-unggul badge-amd">AMD unggul</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Umur platform</th>
+                            <td>Soket cenderung berganti tiap satu sampai dua generasi.</td>
+                            <td>Soket AM5 dipakai lintas beberapa generasi, jadi upgrade prosesor saja lebih mungkin.
+                                <span class="badge-unggul badge-amd">AMD unggul</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Encode video</th>
+                            <td>Quick Sync mempercepat encode dan preview di banyak aplikasi editing.
+                                <span class="badge-unggul badge-intel">Intel unggul</span>
+                            </td>
+                            <td>Tersedia encoder sendiri, tapi dukungan aplikasinya tidak seluas Quick Sync.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Pilihan di pasar</th>
+                            <td>Sangat banyak, terutama untuk laptop dan PC jadi dari berbagai merek.
+                                <span class="badge-unggul badge-intel">Intel unggul</span>
+                            </td>
+                            <td>Terus bertambah, tapi varian tiap merek biasanya lebih sedikit.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-      <div class="activity-item clearfix">
-        <span class="activity-time">2 jam lalu</span>
-        Kamu memperbarui foto profil
-      </div>
-      <div class="activity-item clearfix">
-        <span class="activity-time">Kemarin</span>
-        Konten "Belajar CSS Dasar" diunggah
-      </div>
-      <div class="activity-item clearfix">
-        <span class="activity-time">3 hari lalu</span>
-        Bio profil diperbarui
-      </div>
-    </div>
-  </div>
+            <p class="mt-4 mb-0" style="font-size:14px;">
+                <i class="fa-solid fa-circle-info me-2 teks-intel"></i>
+                Perbandingan ini bersifat umum. Harga dan performa berubah tiap generasi,
+                jadi cek ulang hasil pengujian untuk model yang kamu incar.
+            </p>
+        </div>
+    </section>
+
+    <!-- ============ SOROTAN ============ -->
+    <section class="py-5">
+        <div class="container py-4">
+            <h2 class="judul-seksi text-center mb-5">Tiga hal yang paling <span class="teks-amd">terasa bedanya</span></h2>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="kartu">
+                        <div class="ikon-kotak ikon-amd"><i class="fa-solid fa-gamepad"></i></div>
+                        <h3 class="fs-5 fw-bold mb-3">Cache besar untuk game</h3>
+                        <p class="mb-0">
+                            Game sering bolak-balik mengambil data yang sama. Cache yang lebih besar
+                            memangkas waktu tunggu itu, dan di situlah model X3D milik AMD menonjol.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="kartu">
+                        <div class="ikon-kotak ikon-intel"><i class="fa-solid fa-film"></i></div>
+                        <h3 class="fs-5 fw-bold mb-3">Encoder bawaan Intel</h3>
+                        <p class="mb-0">
+                            Quick Sync menangani encode video lewat bagian khusus di dalam chip,
+                            sehingga ekspor dan preview terasa lebih ringan tanpa membebani semua inti.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="kartu">
+                        <div class="ikon-kotak"><i class="fa-solid fa-arrows-rotate"></i></div>
+                        <h3 class="fs-5 fw-bold mb-3">Rencana upgrade</h3>
+                        <p class="mb-0">
+                            Kalau kamu berniat menaikkan prosesor beberapa tahun lagi, umur soket
+                            menentukan apakah kamu cuma ganti CPU atau sekalian motherboard.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="rekomendasi.html" class="btn btn-utama">
+                    Lihat rekomendasi per kebutuhan <i class="fa-solid fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-5">
+                    <span class="logo-text">Adu Prosesor<sup class="logo-dot">.</sup><sup class="logo-dot">.</sup></span>
+                    <p class="mt-3 mb-0" style="max-width:38ch;">
+                        Panduan singkat memilih prosesor untuk PC rakitan, ditulis sebagai
+                        proyek latihan HTML dan CSS.
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="fs-6 fw-bold mb-3">Halaman</h4>
+                    <a href="login.html" class="d-block mb-2">Beranda</a>
+                    <a href="dashboard.html" class="d-block mb-2">Perbandingan</a>
+                    <a href="profile.html" class="d-block">Rekomendasi</a>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="fs-6 fw-bold mb-3">Catatan</h4>
+                    <p class="mb-0" style="font-size:14px;">
+                        Intel dan AMD adalah merek dagang milik perusahaannya masing-masing.
+                        Harga dan performa berubah tiap generasi, jadi cek ulang sebelum membeli.
+                    </p>
+                </div>
+            </div>
+            <hr style="border-color:#2a3149;" class="my-4">
+            <p class="text-center mb-0" style="font-size:14px;">Dibuat untuk keperluan belajar &mdash; 2026</p>
+        </div>
+    </footer>
+
+    <a href="#" class="back-top" id="backTop" aria-label="Kembali ke atas">
+        <i class="fa-solid fa-chevron-up"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const tombolAtas = document.getElementById('backTop');
+        window.addEventListener('scroll', () => {
+            tombolAtas.classList.toggle('tampil', window.scrollY > 400);
+        });
+    </script>
 
 </body>
+
 </html>
