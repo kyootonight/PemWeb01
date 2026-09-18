@@ -4,13 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perbandingan Intel vs AMD — Adu Prosesor</title>
+    <title>Komparasi Prosesor — Intel vs AMD</title>
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS sendiri, taruh paling bawah supaya bisa menimpa Bootstrap -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -28,153 +35,188 @@
             </button>
             <div class="collapse navbar-collapse" id="menuUtama">
                 <ul class="navbar-nav ms-auto gap-lg-4 text-center">
-                    <li class="nav-item"><a class="nav-link" href="login.html">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="dashboard.html">Perbandingan</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="login.html">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Perbandingan</a></li>
                     <li class="nav-item"><a class="nav-link" href="profile.html">Rekomendasi</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- ============ HERO PENDEK ============ -->
-    <header class="hero hero-kecil">
+    <!-- ============ HERO ============ -->
+    <header class="hero">
         <div class="container">
-            <h1 class="hero-judul mb-3" style="font-size:clamp(2rem,4.5vw,3rem);">Perbandingan per aspek</h1>
-            <p class="hero-teks mb-0">
-                Delapan hal yang biasanya jadi pertimbangan sebelum membeli, plus catatan
-                siapa yang biasanya unggul di tiap poin.
-            </p>
+            <div class="row">
+                <div class="col-lg-9">
+                    <p class="text-uppercase fw-semibold mb-2" style="letter-spacing:2px; color:#8d97b0;">Panduan rakit PC</p>
+                    <h1 class="hero-judul mb-4">
+                        <span class="teks-intel">Intel</span> atau <span class="teks-amd">AMD</span>?
+                    </h1>
+                    <p class="hero-teks fs-5 mb-4">
+                        Dua merek ini mengisi hampir seluruh pasar prosesor desktop. Keduanya sanggup
+                        dipakai main game, kerja, dan kuliah, tapi cara mereka merancang chip berbeda,
+                        dan itu berpengaruh ke harga, panas, serta seberapa lama PC-mu bisa di-upgrade.
+                    </p>
+                    <a href="dashboard.html" class="btn btn-utama me-2 mb-2">
+                        Lihat perbandingan <i class="fa-solid fa-arrow-right ms-1"></i>
+                    </a>
+                    <a href="profile.html" class="btn btn-garis mb-2">Langsung ke rekomendasi</a>
+                </div>
+            </div>
         </div>
     </header>
 
-    <!-- ============ TABEL ============ -->
+    <!-- ============ CARA KERJA ============ -->
     <section class="py-5 bg-seksi">
         <div class="container py-4">
-            <h2 class="judul-seksi text-center mb-5">Tabel <span class="teks-intel">lengkap</span></h2>
-
-            <!-- table-responsive bikin tabel bisa digeser di layar kecil -->
-            <div class="table-responsive tabel-banding">
-                <table class="table table-borderless mb-0">
-                    <thead>
-                        <tr>
-                            <th scope="col">Aspek</th>
-                            <th scope="col" class="kol-intel"><i class="fa-solid fa-microchip me-2"></i>Intel</th>
-                            <th scope="col" class="kol-amd"><i class="fa-solid fa-microchip me-2"></i>AMD</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">Susunan inti</th>
-                            <td>Campuran inti besar (P-core) dan inti kecil (E-core) dalam satu chip.</td>
-                            <td>Semua inti seragam, disusun dalam kelompok bernama CCD.
-                                <span class="badge-unggul badge-seri">Beda pendekatan, bukan soal menang</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Performa game</th>
-                            <td>Stabil dan kompetitif, terutama untuk game yang mengandalkan satu inti cepat.</td>
-                            <td>Model berakhiran X3D punya cache ekstra yang sangat terasa di game berat CPU.
-                                <span class="badge-unggul badge-amd">AMD unggul</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Kerja berat</th>
-                            <td>Jumlah inti total banyak berkat E-core, bagus untuk render dan kompilasi.</td>
-                            <td>Inti banyak dengan performa per inti tinggi, kuat di beban produktivitas.
-                                <span class="badge-unggul badge-seri">Imbang</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Konsumsi daya</th>
-                            <td>Generasi lama cukup haus daya; Core Ultra sudah jauh lebih hemat.</td>
-                            <td>Umumnya lebih hemat daya pada beban yang sama.
-                                <span class="badge-unggul badge-amd">AMD unggul</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Grafis bawaan</th>
-                            <td>Memakai Intel Arc, cukup untuk kerja harian dan game ringan.</td>
-                            <td>Memakai Radeon; seri APU seperti Ryzen 8000G termasuk yang terkuat di kelasnya.
-                                <span class="badge-unggul badge-amd">AMD unggul</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Umur platform</th>
-                            <td>Soket cenderung berganti tiap satu sampai dua generasi.</td>
-                            <td>Soket AM5 dipakai lintas beberapa generasi, jadi upgrade prosesor saja lebih mungkin.
-                                <span class="badge-unggul badge-amd">AMD unggul</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Encode video</th>
-                            <td>Quick Sync mempercepat encode dan preview di banyak aplikasi editing.
-                                <span class="badge-unggul badge-intel">Intel unggul</span>
-                            </td>
-                            <td>Tersedia encoder sendiri, tapi dukungan aplikasinya tidak seluas Quick Sync.</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Pilihan di pasar</th>
-                            <td>Sangat banyak, terutama untuk laptop dan PC jadi dari berbagai merek.
-                                <span class="badge-unggul badge-intel">Intel unggul</span>
-                            </td>
-                            <td>Terus bertambah, tapi varian tiap merek biasanya lebih sedikit.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <p class="mt-4 mb-0" style="font-size:14px;">
-                <i class="fa-solid fa-circle-info me-2 teks-intel"></i>
-                Perbandingan ini bersifat umum. Harga dan performa berubah tiap generasi,
-                jadi cek ulang hasil pengujian untuk model yang kamu incar.
-            </p>
-        </div>
-    </section>
-
-    <!-- ============ SOROTAN ============ -->
-    <section class="py-5">
-        <div class="container py-4">
-            <h2 class="judul-seksi text-center mb-5">Tiga hal yang paling <span class="teks-amd">terasa bedanya</span></h2>
+            <h2 class="judul-seksi text-center mb-5">Cara kerja <span class="teks-intel">masing-masing</span></h2>
 
             <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="kartu">
-                        <div class="ikon-kotak ikon-amd"><i class="fa-solid fa-gamepad"></i></div>
-                        <h3 class="fs-5 fw-bold mb-3">Cache besar untuk game</h3>
+                    <div class="kartu kartu-intel">
+                        <div class="ikon-kotak ikon-intel"><i class="fa-solid fa-microchip"></i></div>
+                        <h3 class="fs-5 fw-bold mb-3">Desain inti campuran Intel</h3>
                         <p class="mb-0">
-                            Game sering bolak-balik mengambil data yang sama. Cache yang lebih besar
-                            memangkas waktu tunggu itu, dan di situlah model X3D milik AMD menonjol.
+                            Sejak generasi ke-12, Intel memisahkan inti besar untuk tugas berat dan
+                            inti kecil untuk tugas latar belakang. Grafis bawaannya kini memakai
+                            arsitektur Arc.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="kartu kartu-amd">
+                        <div class="ikon-kotak ikon-amd"><i class="fa-solid fa-layer-group"></i></div>
+                        <h3 class="fs-5 fw-bold mb-3">Inti seragam milik AMD</h3>
+                        <p class="mb-0">
+                            AMD memakai inti yang sama besar dengan arsitektur Zen. Sebagian model
+                            punya cache bertumpuk (3D V-Cache) yang membuat performa game melonjak.
                         </p>
                     </div>
                 </div>
 
                 <div class="col-md-4">
                     <div class="kartu">
-                        <div class="ikon-kotak ikon-intel"><i class="fa-solid fa-film"></i></div>
-                        <h3 class="fs-5 fw-bold mb-3">Encoder bawaan Intel</h3>
+                        <div class="ikon-kotak"><i class="fa-solid fa-plug-circle-check"></i></div>
+                        <h3 class="fs-5 fw-bold mb-3">Soketnya tidak bisa ditukar</h3>
                         <p class="mb-0">
-                            Quick Sync menangani encode video lewat bagian khusus di dalam chip,
-                            sehingga ekspor dan preview terasa lebih ringan tanpa membebani semua inti.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="kartu">
-                        <div class="ikon-kotak"><i class="fa-solid fa-arrows-rotate"></i></div>
-                        <h3 class="fs-5 fw-bold mb-3">Rencana upgrade</h3>
-                        <p class="mb-0">
-                            Kalau kamu berniat menaikkan prosesor beberapa tahun lagi, umur soket
-                            menentukan apakah kamu cuma ganti CPU atau sekalian motherboard.
+                            Intel terbaru memakai soket LGA 1851, AMD memakai AM5. Motherboard dan
+                            prosesor harus sesoket, jadi merek ini ditentukan sejak awal perakitan.
                         </p>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="text-center mt-5">
-                <a href="rekomendasi.html" class="btn btn-utama">
-                    Lihat rekomendasi per kebutuhan <i class="fa-solid fa-arrow-right ms-1"></i>
-                </a>
+    <!-- ============ RINGKASAN DUA SISI ============ -->
+    <section class="py-5">
+        <div class="container py-4">
+            <h2 class="judul-seksi text-center mb-5">Ringkasnya, <span class="teks-amd">begini</span></h2>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="kartu kartu-intel">
+                        <h3 class="fs-4 fw-bold teks-intel mb-3">Intel cocok kalau</h3>
+                        <ul class="mb-0" style="color:#98a1b8;">
+                            <li class="mb-2">Kamu cari laptop atau PC jadi, pilihannya jauh lebih banyak.</li>
+                            <li class="mb-2">Kamu sering edit video dan ingin memanfaatkan Quick Sync.</li>
+                            <li class="mb-2">Kamu butuh banyak inti untuk kerja paralel dengan harga bersaing.</li>
+                            <li>Kamu tidak berencana mengganti prosesor dalam beberapa tahun ke depan.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="kartu kartu-amd">
+                        <h3 class="fs-4 fw-bold teks-amd mb-3">AMD cocok kalau</h3>
+                        <ul class="mb-0" style="color:#98a1b8;">
+                            <li class="mb-2">Prioritas utamamu main game, terutama lewat model X3D.</li>
+                            <li class="mb-2">Kamu ingin PC yang adem dan tidak boros listrik.</li>
+                            <li class="mb-2">Kamu ingin bisa upgrade prosesor tanpa ganti motherboard.</li>
+                            <li>Kamu belum punya kartu grafis dan mengandalkan grafis bawaan.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="py-5 bg-seksi">
+        <div class="container py-4">
+            <h2 class="judul-seksi text-center mb-5">Pertanyaan yang <span class="teks-intel">sering muncul</span></h2>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <div class="accordion" id="faq">
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq1">
+                                    Angka inti yang lebih banyak pasti lebih kencang?
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faq">
+                                <div class="accordion-body">
+                                    Tidak selalu. Banyak game dan aplikasi harian cuma memakai beberapa inti,
+                                    jadi kecepatan per inti lebih terasa. Inti banyak baru berguna untuk
+                                    rendering, kompilasi, dan pekerjaan yang bisa dibagi-bagi.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq2">
+                                    Prosesor AMD lebih panas dari Intel?
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faq">
+                                <div class="accordion-body">
+                                    Ryzen memang menyentuh suhu tinggi dengan cepat, tapi itu memang
+                                    perilaku normalnya, bukan tanda bermasalah. Dari sisi konsumsi daya
+                                    di beban yang sama, AMD justru cenderung lebih hemat.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq3">
+                                    Kalau ganti merek, apa saja yang ikut diganti?
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faq">
+                                <div class="accordion-body">
+                                    Motherboard wajib diganti karena soketnya berbeda. RAM, SSD, kartu
+                                    grafis, dan power supply umumnya masih bisa dipakai. Pendingin
+                                    kadang butuh braket lain, tapi biasanya tersedia gratis dari pabrikannya.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq4">
+                                    Untuk main game, dana lebih baik ke prosesor atau kartu grafis?
+                                </button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faq">
+                                <div class="accordion-body">
+                                    Kartu grafis. Di resolusi 1080p ke atas, kartu grafis jauh lebih
+                                    menentukan jumlah frame. Prosesor kelas menengah dari salah satu
+                                    merek biasanya sudah memadai.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -209,11 +251,15 @@
         </div>
     </footer>
 
+    <!-- Tombol kembali ke atas -->
     <a href="#" class="back-top" id="backTop" aria-label="Kembali ke atas">
         <i class="fa-solid fa-chevron-up"></i>
     </a>
 
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Tombol back-to-top hanya muncul setelah halaman digulir -->
     <script>
         const tombolAtas = document.getElementById('backTop');
         window.addEventListener('scroll', () => {
